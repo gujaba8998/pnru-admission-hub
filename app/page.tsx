@@ -38,9 +38,9 @@ const services = [
   { icon:"result", title:"ประกาศผลการสอบ", desc:"ตรวจสอบรายชื่อและผลการคัดเลือก", category:"info", label:"ดูผลสอบ", href:"https://admission.pnru.ac.th/info/announceapply", tone:"green" },
   { icon:"calendar", title:"ปฏิทินรับสมัคร", desc:"ติดตามวันสมัคร สอบสัมภาษณ์ และยืนยันสิทธิ์", category:"info", label:"ดูกำหนดการ", href:"https://admission.pnru.ac.th/info/calendar/01", tone:"purple" },
   { icon:"major", title:"สาขาที่เปิดรับ", desc:"เช็กหลักสูตร คุณสมบัติ และจำนวนรับ", category:"info", label:"ดูสาขาวิชา", href:"https://admission.pnru.ac.th/info/open/03", tone:"orange" },
-  { icon:"news", title:"ข่าวรับสมัคร", desc:"ข่าวสารล่าสุดจากงานรับสมัครนักศึกษา", category:"info", label:"อ่านข่าว", href:"https://aic.pnru.ac.th/new/97/all", tone:"blue" },
-  { icon:"report", title:"ขั้นตอนการรายงานตัว", desc:"ดูขั้นตอนและเอกสารสำหรับขึ้นทะเบียนนักศึกษาใหม่", category:"info", label:"ดูขั้นตอน", href:"https://aic.pnru.ac.th/service/383/382", tone:"purple" },
-  { icon:"payment", title:"ค่าลงทะเบียนเรียน", desc:"ตรวจสอบค่าเทอมและค่าธรรมเนียมตามหลักสูตร", category:"info", label:"ดูรายละเอียด", href:"https://aic.pnru.ac.th/service/388/382", tone:"teal" },
+  { icon:"news", title:"ข้อมูลรับสมัครล่าสุด", desc:"ดูประกาศ รอบรับสมัคร และข้อมูลจากระบบ PNRU Admission", category:"info", label:"ดูข้อมูลล่าสุด", href:"https://admission.pnru.ac.th/", tone:"blue" },
+  { icon:"report", title:"การรายงานตัวนักศึกษาใหม่", desc:"ตรวจสอบกำหนดรายงานตัวและเอกสารของรอบ Portfolio", category:"info", label:"ดูกำหนดรายงานตัว", href:"https://admission.pnru.ac.th/info/calendar/03", tone:"purple" },
+  { icon:"payment", title:"ค่าลงทะเบียนเรียน", desc:"ตรวจสอบค่าแรกเข้า ค่าเทอม และยอดรวมแยกตามหลักสูตร", category:"info", label:"ดูตารางค่าลงทะเบียน", href:"https://admission.pnru.ac.th/info/payment/03", tone:"teal" },
   { icon:"facebook", title:"Facebook", desc:"ติดตามข่าวและสอบถามผ่าน Pnru Admission", category:"contact", label:"เปิด Facebook", href:"https://www.facebook.com/PnruAdmission/", tone:"blue" },
   { icon:"tiktok", title:"TikTok", desc:"ติดตามคลิปข่าวสารและคำแนะนำจาก Admission PNRU", category:"contact", label:"เปิด TikTok", href:"https://www.tiktok.com/@admissionpnru", tone:"purple" },
   { icon:"instagram", title:"Instagram", desc:"ติดตามประกาศและกิจกรรม PNRU Admission", category:"contact", label:"เปิด Instagram", href:"https://www.instagram.com/pnru.admission/", tone:"orange" },
@@ -56,7 +56,7 @@ const tabs = [
 const schedules = [
   {
     eyebrow: "รอบโควตาพิเศษ",
-    title: "ภาคปกติ ปีการศึกษา 2569",
+    title: "ภาคปกติ ปีการศึกษา 2570",
     note: "กำหนดการช่วงคัดเลือกและประกาศผล",
     href: "https://admission.pnru.ac.th/info/calendar/01",
     tone: "purple",
@@ -178,29 +178,34 @@ export default function Home() {
       <section className="enrollment-section" id="enrollment">
         <div className="section-heading enrollment-heading">
           <div><span className="overline">AFTER ADMISSION</span><h2>รายงานตัวและค่าลงทะเบียนเรียน</h2></div>
-          <p>เตรียมตัวให้พร้อมหลังผ่านการคัดเลือก</p>
+          <p>ข้อมูลจาก admission.pnru.ac.th</p>
         </div>
         <div className="enrollment-grid">
           <article className="enrollment-card report-card">
             <div className="enrollment-icon"><ServiceIcon name="report" /></div>
             <div className="enrollment-content">
               <span>01 · ขึ้นทะเบียนนักศึกษาใหม่</span><h3>ขั้นตอนการรายงานตัว</h3>
-              <p>ตรวจสอบวัน เวลา และรูปแบบการรายงานตัวของรอบที่สมัคร จากนั้นเตรียมเอกสารให้ครบถ้วน</p>
+              <p>ผู้สมัคร Portfolio ปีการศึกษา 2570 รายงานตัววันที่ 28 พฤษภาคม 2570 โดยต้องติดตามรูปแบบและประกาศล่าสุดของมหาวิทยาลัย</p>
               <ul><li>วุฒิการศึกษา</li><li>บัตรประชาชน</li><li>ทะเบียนบ้าน</li><li>หลักฐานเปลี่ยนชื่อ (ถ้ามี)</li><li>รูปถ่ายทำบัตรนักศึกษา</li></ul>
-              <a href="https://aic.pnru.ac.th/service/383/382" target="_blank" rel="noreferrer">ดูขั้นตอนจาก PNRU <Arrow /></a>
+              <a href="https://admission.pnru.ac.th/info/calendar/03" target="_blank" rel="noreferrer">ดูกำหนดรายงานตัวจาก PNRU <Arrow /></a>
             </div>
           </article>
           <article className="enrollment-card payment-card">
             <div className="enrollment-icon"><ServiceIcon name="payment" /></div>
             <div className="enrollment-content">
               <span>02 · ชำระตามกำหนดของแต่ละรอบ</span><h3>ค่าลงทะเบียนเรียน</h3>
-              <p>ยอดค่าเทอมและค่าธรรมเนียมแตกต่างกันตามระดับ หลักสูตร และประเภทการเรียน โปรดตรวจสอบยอดในใบแจ้งชำระ</p>
+              <p>ยอดชำระประกอบด้วยค่าธรรมเนียมแรกเข้าและค่าลงทะเบียนเรียน โดยแตกต่างกันตามระดับ หลักสูตร และประเภทการเรียน</p>
               <div className="payment-methods"><b>ช่องทางชำระที่ประกาศใช้</b><small>สแกน QR ผ่าน Mobile Banking</small><small>เคาน์เตอร์ธนาคารที่กำหนด</small><small>งานการเงิน อาคาร 4 ชั้น 3</small></div>
-              <a href="https://aic.pnru.ac.th/service/388/382" target="_blank" rel="noreferrer">ตรวจสอบค่าเทอม <Arrow /></a>
+              <a href="https://admission.pnru.ac.th/info/payment/03" target="_blank" rel="noreferrer">ดูค่าลงทะเบียนแยกตามหลักสูตร <Arrow /></a>
             </div>
           </article>
         </div>
-        <div className="enrollment-note"><b>ควรรู้</b><span>กำหนดการและยอดชำระอาจต่างกันในแต่ละรอบ กรุณาเข้าสู่ระบบและตรวจสอบประกาศล่าสุดก่อนชำระเงิน</span></div>
+        <div className="enrollment-note"><b>ควรรู้</b><span>กำหนดการและยอดชำระต่างกันในแต่ละรอบ กรุณาตรวจสอบประกาศล่าสุดก่อนดำเนินการทุกครั้ง</span></div>
+        <div className="enrollment-source-links" aria-label="ข้อมูลรายงานตัวและค่าลงทะเบียนจากระบบรับสมัคร">
+          <a href="https://admission.pnru.ac.th/info/calendar/01" target="_blank" rel="noreferrer">โควตาพิเศษ 2570 <Arrow /></a>
+          <a href="https://admission.pnru.ac.th/info/calendar/03" target="_blank" rel="noreferrer">Portfolio 2570 <Arrow /></a>
+          <a href="https://admission.pnru.ac.th/info/payment/50" target="_blank" rel="noreferrer">ค่าลงทะเบียนปริญญาโท <Arrow /></a>
+        </div>
       </section>
 
       <section className="services-section" id="services">
