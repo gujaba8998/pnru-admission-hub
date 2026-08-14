@@ -21,6 +21,10 @@ const ServiceIcon = ({ name }: { name: string }) => {
     mail: <><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></>,
     phone: <path d="M7 3 4 5c0 8 7 15 15 15l2-3-5-3-2 2c-3-1-5-3-6-6l2-2z"/>,
     location: <><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></>,
+    report: <><path d="M6 3h9l4 4v14H6zM14 3v5h5"/><path d="M9 12h6M9 16h4"/></>,
+    payment: <><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3"/></>,
+    instagram: <><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor" stroke="none"/></>,
+    tiktok: <path d="M14 3v11.2a4.3 4.3 0 1 1-3.6-4.2v3.2a1.5 1.5 0 1 0 .6 1.2V3h3c.4 2 1.7 3.3 4 3.8V10c-1.5-.2-2.8-.8-4-1.8"/>,
   };
   return <svg aria-hidden="true" viewBox="0 0 24 24">{paths[name]}</svg>;
 };
@@ -35,7 +39,11 @@ const services = [
   { icon:"calendar", title:"ปฏิทินรับสมัคร", desc:"ติดตามวันสมัคร สอบสัมภาษณ์ และยืนยันสิทธิ์", category:"info", label:"ดูกำหนดการ", href:"https://admission.pnru.ac.th/info/calendar/01", tone:"purple" },
   { icon:"major", title:"สาขาที่เปิดรับ", desc:"เช็กหลักสูตร คุณสมบัติ และจำนวนรับ", category:"info", label:"ดูสาขาวิชา", href:"https://admission.pnru.ac.th/info/open/03", tone:"orange" },
   { icon:"news", title:"ข่าวรับสมัคร", desc:"ข่าวสารล่าสุดจากงานรับสมัครนักศึกษา", category:"info", label:"อ่านข่าว", href:"https://aic.pnru.ac.th/new/97/all", tone:"blue" },
+  { icon:"report", title:"ขั้นตอนการรายงานตัว", desc:"ดูขั้นตอนและเอกสารสำหรับขึ้นทะเบียนนักศึกษาใหม่", category:"info", label:"ดูขั้นตอน", href:"https://aic.pnru.ac.th/service/383/382", tone:"purple" },
+  { icon:"payment", title:"ค่าลงทะเบียนเรียน", desc:"ตรวจสอบค่าเทอมและค่าธรรมเนียมตามหลักสูตร", category:"info", label:"ดูรายละเอียด", href:"https://aic.pnru.ac.th/service/388/382", tone:"teal" },
   { icon:"facebook", title:"Facebook", desc:"ติดตามข่าวและสอบถามผ่าน Pnru Admission", category:"contact", label:"เปิด Facebook", href:"https://www.facebook.com/PnruAdmission/", tone:"blue" },
+  { icon:"tiktok", title:"TikTok", desc:"ติดตามคลิปข่าวสารและคำแนะนำจาก Admission PNRU", category:"contact", label:"เปิด TikTok", href:"https://www.tiktok.com/@admissionpnru", tone:"purple" },
+  { icon:"instagram", title:"Instagram", desc:"ติดตามประกาศและกิจกรรม PNRU Admission", category:"contact", label:"เปิด Instagram", href:"https://www.instagram.com/pnru.admission/", tone:"orange" },
   { icon:"line", title:"LINE @pnru", desc:"เพิ่มเพื่อนเพื่อรับข่าวสารและสอบถาม", category:"contact", label:"เปิด LINE", href:"https://line.me/R/ti/p/@pnru", tone:"green" },
   { icon:"mail", title:"อีเมลงานรับสมัคร", desc:"admission@pnru.ac.th", category:"contact", label:"ส่งอีเมล", href:"mailto:admission@pnru.ac.th", tone:"yellow" },
   { icon:"phone", title:"โทรสอบถาม", desc:"02 544 8046 ในวันและเวลาราชการ", category:"contact", label:"โทรตอนนี้", href:"tel:025448046", tone:"teal" },
@@ -43,6 +51,48 @@ const services = [
 
 const tabs = [
   { id:"all", label:"ทั้งหมด" }, { id:"apply", label:"การสมัคร" }, { id:"info", label:"ข้อมูลและประกาศ" }, { id:"contact", label:"ติดต่อเรา" },
+];
+
+const schedules = [
+  {
+    eyebrow: "รอบโควตาพิเศษ",
+    title: "ภาคปกติ ปีการศึกษา 2569",
+    note: "กำหนดการช่วงคัดเลือกและประกาศผล",
+    href: "https://admission.pnru.ac.th/info/calendar/01",
+    tone: "purple",
+    dates: [
+      ["19 ส.ค. 69", "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์"],
+      ["29 ส.ค. 69", "สอบสัมภาษณ์"],
+      ["7 ก.ย. 69", "ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษา"],
+      ["7–13 ก.ย. 69", "ชำระค่าลงทะเบียนและค่าธรรมเนียม"],
+    ],
+  },
+  {
+    eyebrow: "Portfolio (TCAS1)",
+    title: "ความสามารถทางวิชาการ ปี 2570",
+    note: "รอบรับสมัครสำหรับนักศึกษาใหม่ภาคปกติ",
+    href: "https://admission.pnru.ac.th/info/calendar/03",
+    tone: "teal",
+    dates: [
+      ["15 ส.ค. 69–1 ก.พ. 70", "รับสมัครออนไลน์และชำระค่าสมัคร"],
+      ["9 ก.พ. 70", "ประกาศรายชื่อผู้มีสิทธิ์สอบ"],
+      ["13 ก.พ. 70", "สอบสัมภาษณ์"],
+      ["26 ก.พ. 70", "ประกาศรายชื่อผู้ผ่านเกณฑ์"],
+    ],
+  },
+  {
+    eyebrow: "ระดับปริญญาโท",
+    title: "ภาคพิเศษ 2/2569",
+    note: "เรียนวันเสาร์–อาทิตย์",
+    href: "https://admission.pnru.ac.th/info/calendar/50",
+    tone: "yellow",
+    dates: [
+      ["13 ก.ค.–13 ก.ย. 69", "รับสมัครผ่านระบบอินเทอร์เน็ต"],
+      ["23 ก.ย. 69", "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์"],
+      ["26 ก.ย. 69", "สอบสัมภาษณ์"],
+      ["1 ต.ค. 69", "ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษา"],
+    ],
+  },
 ];
 
 export default function Home() {
@@ -68,7 +118,7 @@ export default function Home() {
       </header>
 
       <nav className="main-nav" aria-label="เมนูหลัก">
-        <div><a href="#top">หน้าแรก</a><a href="#services">รวมบริการ</a><a href="#steps">ขั้นตอนสมัคร</a><a href="#location">แผนที่</a><a href="#contact">ติดต่อเรา</a></div>
+        <div><a href="#top">หน้าแรก</a><a href="#schedule">กำหนดการ</a><a href="#enrollment">รายงานตัว</a><a href="#services">รวมบริการ</a><a href="#steps">ขั้นตอนสมัคร</a><a href="#location">แผนที่</a><a href="#contact">ติดต่อเรา</a></div>
         <a className="nav-portal" href="https://aic.pnru.ac.th/" target="_blank" rel="noreferrer">เว็บไซต์งานรับสมัคร <Arrow /></a>
       </nav>
 
@@ -97,6 +147,60 @@ export default function Home() {
         <div className="official-mark"><img src="/aic-logo.gif" alt="สำนักส่งเสริมวิชาการและงานทะเบียน" /></div>
         <div><span className="overline">OFFICIAL PORTAL</span><h2>เว็บไซต์งานรับสมัครนักศึกษา</h2><p>ข่าวประชาสัมพันธ์ ข้อมูลผู้สมัคร และบริการจากสำนักส่งเสริมวิชาการและงานทะเบียน</p></div>
         <a href="https://aic.pnru.ac.th/" target="_blank" rel="noreferrer">เข้าสู่เว็บไซต์ <Arrow /></a>
+      </section>
+
+      <section className="schedule-section" id="schedule">
+        <div className="section-heading schedule-heading">
+          <div><span className="overline">IMPORTANT DATES</span><h2>กำหนดการรับสมัคร</h2></div>
+          <div className="schedule-update"><ServiceIcon name="calendar" /><span>ข้อมูลจากระบบรับสมัคร PNRU<br/><small>อัปเดต 14 สิงหาคม 2569</small></span></div>
+        </div>
+        <div className="schedule-grid">
+          {schedules.map((schedule) => (
+            <article className={`schedule-card ${schedule.tone}`} key={schedule.title}>
+              <div className="schedule-card-head">
+                <span>{schedule.eyebrow}</span>
+                <ServiceIcon name="calendar" />
+              </div>
+              <h3>{schedule.title}</h3>
+              <p>{schedule.note}</p>
+              <ol className="schedule-list">
+                {schedule.dates.map(([date, activity]) => (
+                  <li key={`${date}-${activity}`}><time>{date}</time><span>{activity}</span></li>
+                ))}
+              </ol>
+              <a href={schedule.href} target="_blank" rel="noreferrer">ดูกำหนดการฉบับเต็ม <Arrow /></a>
+            </article>
+          ))}
+        </div>
+        <p className="schedule-disclaimer">กำหนดการอาจมีการเปลี่ยนแปลง โปรดตรวจสอบประกาศล่าสุดจากระบบรับสมัครของมหาวิทยาลัยก่อนดำเนินการทุกครั้ง</p>
+      </section>
+
+      <section className="enrollment-section" id="enrollment">
+        <div className="section-heading enrollment-heading">
+          <div><span className="overline">AFTER ADMISSION</span><h2>รายงานตัวและค่าลงทะเบียนเรียน</h2></div>
+          <p>เตรียมตัวให้พร้อมหลังผ่านการคัดเลือก</p>
+        </div>
+        <div className="enrollment-grid">
+          <article className="enrollment-card report-card">
+            <div className="enrollment-icon"><ServiceIcon name="report" /></div>
+            <div className="enrollment-content">
+              <span>01 · ขึ้นทะเบียนนักศึกษาใหม่</span><h3>ขั้นตอนการรายงานตัว</h3>
+              <p>ตรวจสอบวัน เวลา และรูปแบบการรายงานตัวของรอบที่สมัคร จากนั้นเตรียมเอกสารให้ครบถ้วน</p>
+              <ul><li>วุฒิการศึกษา</li><li>บัตรประชาชน</li><li>ทะเบียนบ้าน</li><li>หลักฐานเปลี่ยนชื่อ (ถ้ามี)</li><li>รูปถ่ายทำบัตรนักศึกษา</li></ul>
+              <a href="https://aic.pnru.ac.th/service/383/382" target="_blank" rel="noreferrer">ดูขั้นตอนจาก PNRU <Arrow /></a>
+            </div>
+          </article>
+          <article className="enrollment-card payment-card">
+            <div className="enrollment-icon"><ServiceIcon name="payment" /></div>
+            <div className="enrollment-content">
+              <span>02 · ชำระตามกำหนดของแต่ละรอบ</span><h3>ค่าลงทะเบียนเรียน</h3>
+              <p>ยอดค่าเทอมและค่าธรรมเนียมแตกต่างกันตามระดับ หลักสูตร และประเภทการเรียน โปรดตรวจสอบยอดในใบแจ้งชำระ</p>
+              <div className="payment-methods"><b>ช่องทางชำระที่ประกาศใช้</b><small>สแกน QR ผ่าน Mobile Banking</small><small>เคาน์เตอร์ธนาคารที่กำหนด</small><small>งานการเงิน อาคาร 4 ชั้น 3</small></div>
+              <a href="https://aic.pnru.ac.th/service/388/382" target="_blank" rel="noreferrer">ตรวจสอบค่าเทอม <Arrow /></a>
+            </div>
+          </article>
+        </div>
+        <div className="enrollment-note"><b>ควรรู้</b><span>กำหนดการและยอดชำระอาจต่างกันในแต่ละรอบ กรุณาเข้าสู่ระบบและตรวจสอบประกาศล่าสุดก่อนชำระเงิน</span></div>
       </section>
 
       <section className="services-section" id="services">
@@ -138,7 +242,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact-section" id="contact"><div><span className="overline">NEED HELP?</span><h2>ต้องการความช่วยเหลือ?</h2><p>งานรับสมัครนักศึกษา สำนักส่งเสริมวิชาการและงานทะเบียน</p></div><div className="contact-actions"><a href="tel:025448046"><small>โทรสอบถาม</small><strong>02 544 8046</strong></a><a href="mailto:admission@pnru.ac.th"><small>ส่งอีเมล</small><strong>admission@pnru.ac.th</strong></a></div></section>
+      <section className="contact-section" id="contact"><div><span className="overline">NEED HELP?</span><h2>ต้องการความช่วยเหลือ?</h2><p>งานรับสมัครนักศึกษา สำนักส่งเสริมวิชาการและงานทะเบียน</p></div><div className="contact-actions"><a href="tel:025448046"><small>โทรสอบถาม</small><strong>02 544 8046</strong></a><a href="mailto:admission@pnru.ac.th"><small>ส่งอีเมล</small><strong>admission@pnru.ac.th</strong></a><a href="https://www.tiktok.com/@admissionpnru" target="_blank" rel="noreferrer"><small>ติดตาม TikTok</small><strong>@admissionpnru</strong></a><a href="https://www.instagram.com/pnru.admission/" target="_blank" rel="noreferrer"><small>ติดตาม Instagram</small><strong>@pnru.admission</strong></a></div></section>
 
       <footer><div className="footer-brand"><img src="/pnru-seal.png" alt="ตรามหาวิทยาลัยราชภัฏพระนคร"/><div><strong>PNRU ADMISSION</strong><small>มหาวิทยาลัยราชภัฏพระนคร</small></div></div><p>อาคาร 4 เลขที่ 9 ถนนแจ้งวัฒนะ แขวงอนุสาวรีย์<br/>เขตบางเขน กรุงเทพมหานคร 10220</p><p className="disclaimer">เว็บไซต์รวมทางลัด โปรดตรวจสอบรายละเอียดล่าสุดจากหน้าปลายทางทุกครั้ง</p></footer>
     </main>
